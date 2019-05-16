@@ -10,10 +10,10 @@
         <module name="eureka" />
       </profile>
     </annotationProcessing>
-  </component>
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="eureka" options="-parameters" />
-    </option>
+    <bytecodeTargetLevel>
+      <module name="common" target="1.7" />
+      <module name="eureka" target="1.8" />
+      <module name="wuzu-guazi-spring" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
