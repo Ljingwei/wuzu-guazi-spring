@@ -7,7 +7,7 @@ public class CarBean {
     private Integer yeartypeid;//哪一年的款id
     private Integer sptimeid; //上牌时间id;
     private Integer plataid; //牌照地id
-    private Integer displacementid;//排量id
+    private String displacement;//排量id
     private Integer transmissionid;//变速箱id
     private Integer modelsid;//车型id
     private Integer smissiontypeid;//排放标准id
@@ -22,9 +22,17 @@ public class CarBean {
     private Integer username;//车主姓名
     private Integer mileage;//里程数
     private Integer carareaid;//车源地id
-
+    private Integer price;//价格
     public Integer getCarid() {
         return carid;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
     }
 
     public void setCarid(Integer carid) {
@@ -71,12 +79,12 @@ public class CarBean {
         this.plataid = plataid;
     }
 
-    public Integer getDisplacementid() {
-        return displacementid;
+    public String getDisplacement() {
+        return displacement;
     }
 
-    public void setDisplacementid(Integer displacementid) {
-        this.displacementid = displacementid;
+    public void setDisplacement(String displacement) {
+        this.displacement = displacement;
     }
 
     public Integer getTransmissionid() {
