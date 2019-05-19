@@ -2,7 +2,7 @@ package com.jk.model;
 
 public class YeartypeBean {
     private Integer yeartypeid;
-    private String year;
+    private Integer year;
 
     public Integer getYeartypeid() {
         return yeartypeid;
@@ -12,11 +12,11 @@ public class YeartypeBean {
         this.yeartypeid = yeartypeid;
     }
 
-    public String getYear() {
+    public Integer getYear() {
         return year;
     }
 
-    public void setYear(String year) {
+    public void setYear(Integer year) {
         this.year = year;
     }
 }

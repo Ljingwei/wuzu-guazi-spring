@@ -1,15 +1,22 @@
 package com.jk.model;
 
-public class CarBean {
+import java.io.Serializable;
+
+public class CarBean implements Serializable{
     private Integer carid;
     private Integer brandid;//品牌id
+    private String brandname;
     private Integer seriesid;//车系id
+    private String seriesname;
     private Integer yeartypeid;//哪一年的款id
+    private String year;
     private Integer sptimeid; //上牌时间id;
     private Integer plataid; //牌照地id
     private String displacement;//排量id
     private Integer transmissionid;//变速箱id
+    private String transmissionname;
     private Integer modelsid;//车型id
+    private String modelname;
     private Integer smissiontypeid;//排放标准id
     private Integer seattypeid; //座位数id
     private Integer fueltypeid;//燃油类型id
@@ -23,6 +30,83 @@ public class CarBean {
     private Integer mileage;//里程数
     private Integer carareaid;//车源地id
     private Integer price;//价格
+    private String  imgid;//图片id
+    private String img;
+     private String labelid;//标签
+     private String labelname;
+
+    public String getTransmissionname() {
+        return transmissionname;
+    }
+
+    public void setTransmissionname(String transmissionname) {
+        this.transmissionname = transmissionname;
+    }
+
+    public String getLabelid() {
+        return labelid;
+    }
+
+    public void setLabelid(String labelid) {
+        this.labelid = labelid;
+    }
+
+    public String getLabelname() {
+        return labelname;
+    }
+
+    public void setLabelname(String labelname) {
+        this.labelname = labelname;
+    }
+
+    public String getBrandname() {
+        return brandname;
+    }
+
+    public void setBrandname(String brandname) {
+        this.brandname = brandname;
+    }
+
+    public String getSeriesname() {
+        return seriesname;
+    }
+
+    public void setSeriesname(String seriesname) {
+        this.seriesname = seriesname;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+    public String getModelname() {
+        return modelname;
+    }
+
+    public void setModelname(String modelname) {
+        this.modelname = modelname;
+    }
+
+    public String getImgid() {
+        return imgid;
+    }
+
+    public void setImgid(String imgid) {
+        this.imgid = imgid;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
     public Integer getCarid() {
         return carid;
     }
