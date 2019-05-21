@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap3/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../js/bootstrap3/css/bootstrap.css" />
+
+    <link rel="stylesheet" href="../js/bootstrap-table/bootstrap-table.css">
+    <script src="../js/bootstrap-table/bootstrap-table.js"></script>
+    <script src="../js/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+
+    <script src="../js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    <script src="../js/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+    <link rel="stylesheet" href="../js/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css">
+
+    <script src="../js/bootstrap-bootbox/bootbox.all.min.js"></script>
+
+    <script type="text/javascript" src="../js/bootstrap-select/area.js"></script>
+</head>
+<body>
+
+
+
+<!-- 分页查询 -->
+<div class="table" id="myTable"></div>
+
+</body>
+<script>
+
+//立即加载
+ $(function(){
+     initMyTable();
+ })
+
+
+//分页查询
+ function initMyTable(){
+     $('#myTable').bootstrapTable({
+         url:'/car/carqueryYwa',
+        // method:'post',
+         /*pagination:true,
+         toolbar:'#toolbar',
+         contentType:'application/x-www-form-urlencoded',//post请求按照表单方式
+         sidePagination:'server',//分页方式：client客户端分页，server服务端分页（*
+         pageList:[5,10,20,50],//分页组件
+         pageNumber:1,
+         pageSize:5,//默认每页条数*/
+         striped:true,//斑马线
+         clickToSelect: true, //是否启用点击选中行
+    /*     queryParams:function(){  //分页
+             return{
+                 page:this.pageNumber,
+                 rows:this.pageSize
+             }
+         },*/
+         columns:[
+             {checkbox:true},
+             {field:'carid',title:'主键ID'},
+             {field:'brandname',title:'品牌'},
+             {field:'yeartypename',title:'哪一年的款'},
+             {field:'displacement',title:'排量'},
+             {field:'transmissionname',title:'变速箱'},
+             {field:'gztype',title:'在瓜子中说的类型（-1为严选型)'},
+             {field:'userphone',title:'车主电话'},
+             {field:'price',title:'价格为int类型，以万为单位'},
+             {field:'mileage',title:'里程数'},
+             {field:'km',title:'公里'}
+         ]
+     })
+ }
+
+
+
+
+
+
+
+
+
+</script>
+</html>
