@@ -8,11 +8,16 @@
         <outputRelativeToContentRoot value="true" />
         <module name="common" />
         <module name="eureka" />
+        <module name="springcloud-consumer-czy" />
+        <module name="springcloud-provide-czy" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="common" target="1.7" />
       <module name="eureka" target="1.8" />
+      <module name="springcloud-consumer-czy" target="1.8" />
+      <module name="springcloud-provide-czy" target="1.8" />
+      <module name="springcloud-server-czy" target="1.8" />
       <module name="wuzu-guazi-spring" target="1.7" />
     </bytecodeTargetLevel>
   </component>

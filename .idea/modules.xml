@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka/eureka.iml" filepath="$PROJECT_DIR$/eureka/eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud-consumer-czy/springcloud-consumer-czy.iml" filepath="$PROJECT_DIR$/springcloud-consumer-czy/springcloud-consumer-czy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud-provide-czy/springcloud-provide-czy.iml" filepath="$PROJECT_DIR$/springcloud-provide-czy/springcloud-provide-czy.iml" />
       <module fileurl="file://$PROJECT_DIR$/wuzu-guazi-spring.iml" filepath="$PROJECT_DIR$/wuzu-guazi-spring.iml" />
     </modules>
   </component>

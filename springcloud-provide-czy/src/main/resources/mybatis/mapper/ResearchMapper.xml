@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jk.mapper.ResearchMapper" >
+
+
+    <!--查询所有车型  首页展示-->
+    <select id="queryCarHome"  parameterType="com.jk.model.CarBean" resultType="com.jk.model.CarBean" >
+        select c.carid as carid,tb.brandname as brandname,ts.seriesname AS seriesname,ty.year as year ,c.displacement as displacement,
+        tt.transmissionname as transmissionname,c.price,
+        GROUP_CONCAT(tc.labelname) as labelname,GROUP_CONCAT(tcrimg.img) as img
+        from c_car c
+        LEFT JOIN t_brand tb ON c.brandid= tb.brandid
+        LEFT JOIN t_series ts ON c.seriesid=ts.seriesid
+        LEFT JOIN t_yeartype ty ON c.yeartypeid=ty.yeartypeid
+        LEFT JOIN t_transmission tt ON c.transmissionid=tt.transmissionid
+        LEFT JOIN t_carandcarlabel tcc ON tcc.carid=c.carid
+        LEFT JOIN t_carlabel tc ON tcc.carlabelid=tc.labelid
+        LEFT JOIN t_carandimg tci ON tci.carid=c.carid
+        LEFT JOIN t_carimg tcrimg ON tci.imgid=tcrimg.id
+        where 1=1
+
+        <if test="carType != null and carType != ''">
+            and tb.brandname like '%${carType}%'
+        </if>
+
+        <if test="carBrand == 1 ">
+            and tb.brandname like '%大众%'
+        </if>
+        <if test="carBrand == 2 ">
+            and tb.brandname like '%宝马%'
+        </if>
+        <if test="carBrand == 3 ">
+            and tb.brandname like '%奔驰%'
+        </if>
+        <if test="carBrand == 4 ">
+            and t.car_type like '%奥迪%'
+        </if>
+        <if test="carBrand== 5 ">
+            and tb.brandname like '%别克%'
+        </if>
+        <if test="carBrand== 6 ">
+            and tb.brandname like '%丰田%'
+        </if>
+        <if test="carBrand == 7 ">
+            and tb.brandname like '%现代%'
+        </if>
+        <if test="carBrand == 8 ">
+            and tb.brandname like '%福特%'
+        </if>
+        <if test="carBrand== 9 ">
+            and t.car_type like '%日产%'
+        </if>
+        <if test="carBrand == 10 ">
+            and tb.brandname like '%本田%'
+        </if>
+        <if test="carBrand == 11 ">
+            and tb.brandname like '%长安%'
+        </if>
+        <if test="carBrand == 12 ">
+            and tb.brandname like '%雪佛兰%'
+        </if>
+        <if test="carBrand == 13 ">
+            and tb.brandname like '%哈佛%'
+        </if>
+        <!--价格  区间查询-->
+        <if test="carBrand == 333 ">
+            and c.price &lt; 3
+        </if>
+        <if test="carBrand == 35 ">
+            and c.price &lt;= 5 and c.price &gt;= 3
+        </if>
+        <if test="carBrand == 57 ">
+            and t.price &lt;= 7 and c.price &gt;= 5
+        </if>
+        <if test="carBrand == 79 ">
+            and c.price &lt;= 9.0 and c.price &gt;= 7.0
+        </if>
+        <if test="carBrand == 912 ">
+            and c.price &lt;= 12.0 and c.price &gt;= 7.0
+        </if>
+        <if test="carBrand== 1215 ">
+            and c.price &lt;= 15 and c.price &gt;= 12
+        </if>
+        <if test="carBrand == 1620 ">
+            and c.price &lt;= 20 and c.price &gt;= 16
+        </if>
+        GROUP BY c.carid
+    </select>
+
+    <!--根据当前汽车id查询该商品说的所有信息-->
+    <select id="queryCarInfoByCarId" resultType="com.jk.model.CarBean" parameterType="int">
+        select c.carid as carid,tb.brandname as brandname,ts.seriesname AS seriesname,ty.year as year ,c.displacement as displacement,
+        tt.transmissionname as transmissionname,c.price,
+        GROUP_CONCAT(tc.labelname) as labelname,GROUP_CONCAT(tcrimg.img) as img
+        from c_car c
+        LEFT JOIN t_brand tb ON c.brandid= tb.brandid
+        LEFT JOIN t_series ts ON c.seriesid=ts.seriesid
+        LEFT JOIN t_yeartype ty ON c.yeartypeid=ty.yeartypeid
+        LEFT JOIN t_transmission tt ON c.transmissionid=tt.transmissionid
+        LEFT JOIN t_carandcarlabel tcc ON tcc.carid=c.carid
+        LEFT JOIN t_carlabel tc ON tcc.carlabelid=tc.labelid
+        LEFT JOIN t_carandimg tci ON tci.carid=c.carid
+        LEFT JOIN t_carimg tcrimg ON tci.imgid=tcrimg.id
+        where  c.carid = #{value}
+    </select>
+
+</mapper>
