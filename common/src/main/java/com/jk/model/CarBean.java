@@ -1,7 +1,10 @@
 package com.jk.model;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.io.Serializable;
 
+@Document(collection="t_car")
 public class CarBean implements Serializable{
     private Integer carid;
     private Integer brandid;//品牌id

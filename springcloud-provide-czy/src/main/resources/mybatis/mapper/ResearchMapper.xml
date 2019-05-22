@@ -33,7 +33,7 @@
             and tb.brandname like '%奔驰%'
         </if>
         <if test="carBrand == 4 ">
-            and t.car_type like '%奥迪%'
+            and tb.brandname like '%奥迪%'
         </if>
         <if test="carBrand== 5 ">
             and tb.brandname like '%别克%'
@@ -70,7 +70,7 @@
             and c.price &lt;= 5 and c.price &gt;= 3
         </if>
         <if test="carBrand == 57 ">
-            and t.price &lt;= 7 and c.price &gt;= 5
+            and c.price &lt;= 7 and c.price &gt;= 5
         </if>
         <if test="carBrand == 79 ">
             and c.price &lt;= 9.0 and c.price &gt;= 7.0
